@@ -172,16 +172,6 @@ A port is like a door number on a server. Different services listen on different
 | DNS query | UDP | 53 |
 
 ---
-
-## Firewall Commands (Linux Quick Reference)
-
-```bash
-# Allow HTTP (port 80)
-sudo firewall-cmd --add-service=http --permanent
-
-# Allow SSH (port 22)
-sudo firewall-cmd --add-service=ssh --permanent
-
 # Allow custom port
 sudo firewall-cmd --add-port=8080/tcp --permanent
 
