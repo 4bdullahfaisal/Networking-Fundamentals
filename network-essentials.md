@@ -172,8 +172,3 @@ A port is like a door number on a server. Different services listen on different
 | DNS query | UDP | 53 |
 
 ---
-# Allow custom port
-sudo firewall-cmd --add-port=8080/tcp --permanent
-
-# Reload to apply
-sudo firewall-cmd --reload
