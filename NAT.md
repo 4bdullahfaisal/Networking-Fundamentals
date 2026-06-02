@@ -1,4 +1,4 @@
-# CCNA Day 4 — NAT (Network Address Translation)
+# CCNA — NAT (Network Address Translation)
 ---
 
 ## What is NAT?
