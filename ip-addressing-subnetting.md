@@ -1,4 +1,4 @@
-# CCNA Day 2 — IP Addressing, Subnetting & IPV6
+# CCNA — IP Addressing, Subnetting & IPV6
 
 ---
 
