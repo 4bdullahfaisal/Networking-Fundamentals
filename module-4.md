@@ -93,12 +93,6 @@ Routers automatically learn routes from each other using **routing protocols**.
 | Private Routing | Inside your VPC, between subnets | Route tables in AWS VPC |
 | Public Routing | To/from the internet | Internet Gateway, NAT Gateway |
 
-### AWS Example:
-- **Internet Gateway (IGW)** → Public routing (subnet → internet)
-- **NAT Gateway** → Private subnet → internet (outbound only)
-- **VPC Peering** → Private routing between VPCs
-- **Transit Gateway** → Private routing between many VPCs
-
 ---
 
 ## Default Route (0.0.0.0/0)
@@ -128,29 +122,6 @@ The **default route** is a catch-all route for any traffic that doesn't match a 
 
 ---
 
-## AWS VPC Route Tables (DevOps Focus)
-
-### Public Subnet Route Table:
-
-| Destination | Target |
-|-------------|--------|
-| 10.0.0.0/16 | local |
-| 0.0.0.0/0 | igw-xxxxx (Internet Gateway) |
-
-### Private Subnet Route Table:
-
-| Destination | Target |
-|-------------|--------|
-| 10.0.0.0/16 | local |
-| 0.0.0.0/0 | nat-xxxxx (NAT Gateway) |
-
-### Key Points:
-- **Local route** (`10.0.0.0/16`) is automatically added (keeps traffic inside VPC)
-- **Default route** (`0.0.0.0/0`) sends all other traffic to internet gateway or NAT
-- **Static routing** is what you configure in AWS (you add routes manually)
-- Route tables are associated with subnets (one subnet = one route table)
-
----
 
 ## Linux Routing Commands
 
@@ -189,10 +160,3 @@ ip neigh
 
 ---
 
-## Routing Summary for DevOps
-
-- **Routing** = moving data between networks
-- **Routing table** = rules for where traffic goes
-- **Default route (0.0.0.0/0)** = send all unknown traffic here
-- **Static routing** = manually added routes (AWS VPC route tables)
-- **Dynamic routing** = automatic (routing protocols like BGP for Direct Connect)
