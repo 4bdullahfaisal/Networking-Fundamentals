@@ -106,18 +106,6 @@ DHCP automatically assigns IP addresses to devices on a network.
 
 ---
 
-## DHCP in AWS VPC
-
-| Feature | How it works |
-|---------|--------------|
-| VPC DHCP Options Set | Custom DNS servers, domain names |
-| Default DHCP | AWS-provided DNS (VPC resolver) |
-| Custom DHCP | Use your own DNS servers |
-| EC2 IP assignment | Auto-assign private IP within subnet |
-| Public IP assignment | Auto-assign public IP (optional) |
-
----
-
 ## DHCP vs Static IP
 
 | Feature | DHCP | Static IP |
@@ -175,23 +163,5 @@ sudo systemctl restart NetworkManager
 | DORA | Discover, Offer, Request, Acknowledge |
 | Lease Time | Duration of IP assignment |
 | AWS DHCP Options Set | Custom DNS configuration for VPC |
-
----
-
-## Commands Summary
-
-```bash
-# DNS
-nslookup google.com
-dig google.com
-dig -x 8.8.8.8
-host google.com
-sudo systemd-resolve --flush-caches
-
-# DHCP
-sudo dhclient -r eth0
-sudo dhclient eth0
-cat /var/lib/dhcp/dhclient.leases
-```
 
 ---
