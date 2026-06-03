@@ -44,15 +44,6 @@ VPN = Virtual Private Network — creates a secure, encrypted connection over a 
 
 ---
 
-## DevOps Scenario — AWS VPN Options
-
-| AWS Service | What it does | Use Case |
-|-------------|--------------|----------|
-| Site-to-Site VPN | IPsec tunnel | On-premises to AWS VPC |
-| Client VPN | OpenVPN-based | Remote users accessing AWS |
-| VPN CloudHub | Multiple VPN connections | Hub-and-spoke VPN |
-| AWS Transit Gateway VPN | Central VPN management | Multiple VPCs + on-premises |
-
 ### Architecture Example:
 ```
 On-Premises Data Center
@@ -115,57 +106,3 @@ ip route show table all | grep tun0
 ```
 
 ---
-
-## AWS VPN Commands (CLI)
-
-```bash
-# Create VPN connection
-aws ec2 create-vpn-connection \
-    --customer-gateway-id cgw-xxxxx \
-    --vpn-gateway-id vgw-xxxxx \
-    --type ipsec.1
-
-# Describe VPN connections
-aws ec2 describe-vpn-connections
-
-# Create Client VPN endpoint
-aws ec2 create-client-vpn-endpoint \
-    --client-cidr-block 10.0.0.0/22 \
-    --server-certificate-arn arn:aws:acm:...
-
-# Associate Client VPN with subnet
-aws ec2 associate-client-vpn-target-network \
-    --client-vpn-endpoint-id cvpn-xxxxx \
-    --subnet-id subnet-xxxxx
-```
-
----
-
-## Quick Revision Table
-
-| Question | Answer |
-|----------|--------|
-| What does VPN stand for? | Virtual Private Network |
-| What does VPN do? | Creates secure, encrypted connection over internet |
-| AWS Site-to-Site VPN uses? | IPsec protocol |
-| AWS Client VPN uses? | OpenVPN protocol |
-| Common VPN ports? | UDP 500, 4500 (IPsec), UDP 1194 (OpenVPN) |
-| Full tunnel vs split tunnel? | Full = all traffic through VPN, Split = only certain traffic |
-
----
-
-## Commands Summary
-
-```bash
-# Linux VPN commands
-ipsec status
-systemctl status ipsec
-sudo openvpn --config client.ovpn
-sudo wg show
-sudo wg-quick up wg0
-ip a show tun0
-
-# AWS VPN CLI
-aws ec2 describe-vpn-connections
-aws ec2 create-client-vpn-endpoint
-```
