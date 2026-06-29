@@ -1,4 +1,4 @@
-# CCNA - Application Layer Protocols (HTTP, HTTPS, FTP, SSH )  - Ports
+# CCNA — Application Layer Protocols (HTTP, HTTPS, FTP, SSH )  - Ports
 
 ---
 
