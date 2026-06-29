@@ -1,4 +1,4 @@
-# CCNA - Firewalls & Security Groups
+# CCNA — Firewalls & Security Groups
 ---
 
 ## What is a Firewall?
