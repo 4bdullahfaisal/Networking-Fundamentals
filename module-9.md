@@ -404,3 +404,36 @@ curl -I https://example.com
 sudo tcpdump -i eth0 -c 10
 sudo tcpdump -i eth0 port 80 -A
 ```
+
+
+```bash
+# Testing
+ping -c 4 google.com        # Send 4 ping packets
+traceroute google.com       # Trace path to host
+telnet host 22              # Test port connectivity
+nc -zv host 80              # Netcat port scan
+
+# DNS
+nslookup google.com         # DNS lookup
+dig google.com              # Detailed DNS query
+dig -x 8.8.8.8              # Reverse DNS lookup
+
+# Ports
+ss -tulpn                   # Show all listening ports
+netstat -tulpn              # Alternative to ss
+
+# IP Info
+ip a                        # Show IP addresses
+ip route                    # Show routing table
+curl ifconfig.me            # Show public IP
+
+# Firewall (firewalld)
+systemctl status firewalld  # Check firewall status
+firewall-cmd --list-all     # List all rules
+firewall-cmd --add-service=http --permanent
+firewall-cmd --reload       # Reload firewall
+
+# Packet Capture
+tcpdump -i eth0 -c 10       # Capture 10 packets
+tcpdump -i eth0 port 80 -A  # Capture HTTP traffic
+```
